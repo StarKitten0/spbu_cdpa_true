@@ -23,12 +23,12 @@ namespace MatrixMultiplier
         {
             if (operand1.width != operand2.height)
                 throw new ArgumentException("size incompatibility");
-                Matrix result = new Matrix(operand1.height, operand2.width);
-                for (int i = 0; i < operand1.height; i++)
-                    for (int j = 0; j < operand2.width; j++)
-                        for (int t = 0; t < operand1.width; t++)
-                            result[i, j] += operand1[i, t] * operand2[t, j];
-                return result;
+            Matrix result = new Matrix(operand1.height, operand2.width);
+            for (int i = 0; i < operand1.height; i++)
+                for (int j = 0; j < operand2.width; j++)
+                    for (int t = 0; t < operand1.width; t++)
+                        result[i, j] += operand1[i, t] * operand2[t, j];
+            return result;
         }
 
         public static Matrix operator +(Matrix operand1, Matrix operand2)
@@ -46,6 +46,8 @@ namespace MatrixMultiplier
 
         public override bool Equals(object obj)
         {
+            if !(obj is Matrix)
+                throw new ArgumentException("Object is not Matrix");
             Matrix objToCompare = obj as Matrix;
             if (objToCompare.width != this.width || objToCompare.height != this.height)
                 return false;
