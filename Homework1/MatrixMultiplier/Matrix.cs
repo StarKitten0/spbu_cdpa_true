@@ -46,7 +46,7 @@ namespace MatrixMultiplier
 
         public override bool Equals(object obj)
         {
-            if !(obj is Matrix)
+            if (!(obj is Matrix))
                 throw new ArgumentException("Object is not Matrix");
             Matrix objToCompare = obj as Matrix;
             if (objToCompare.width != this.width || objToCompare.height != this.height)
