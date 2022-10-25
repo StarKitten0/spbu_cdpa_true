@@ -9,16 +9,17 @@ before_install:
 
 
 install:
-
      - nuget restore Homework1/Homework1.sln
     # - nuget restore Homework2sharp/CSharp.sln
     # - nuget restore Homework3/Task3.sln
     
 script:
+
     - dotnet build Homework1/Homework1.sln
     - dotnet test Homework1/Homework1.sln
    # - dotnet build Homework2sharp/CSharp.sln
    # - dotnet test Homework2sharp/CSharp.sln
    # - dotnet build Homework3/Task3.sln
    # - dotnet test Homework3/Task3.sln
+
 
