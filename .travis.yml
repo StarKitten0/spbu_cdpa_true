@@ -22,3 +22,4 @@ script:
     - dotnet build Homework3/Task3.sln
     - dotnet test Homework3/Task3.sln
 
+
