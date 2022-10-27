@@ -8,6 +8,9 @@ namespace MatrixMultiplier
 
         public static Matrix Read(string FileName)
         {
+            if (!File.Exists(FileName)) { throw new Exception("File does not exist"); }
+            else
+            {
                 string[] lines = File.ReadAllLines(FileName);
                 string[] line;
                 int[,] array = new int[lines.Length, lines[0].Split().Length];
@@ -20,6 +23,7 @@ namespace MatrixMultiplier
                 if (array != null)
                     return new Matrix(array);
                 else throw new Exception("No data");
+            }
         }
     }
 }
